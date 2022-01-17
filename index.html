@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./index.js" defer></script>
+    <title>DragStuff</title>
+  </head>
+  <body>
+    <header>
+      <h1>testing draggable items</h1>
+    </header>
+    <main>
+      <section class="container">
+        <h1>Drag these</h1>
+        <div class="draggable" draggable="true" id="1" title="object one">
+          Drag me 1
+        </div>
+        <div class="draggable" draggable="true" id="2" title="second object">
+          Drag me 2
+        </div>
+        <div
+          class="draggable"
+          draggable="true"
+          id="3"
+          title="third item on list"
+        >
+          Drag me 3
+        </div>
+      </section>
+      <section class="container" id="collector">
+        <h1>Drag to here</h1>
+        <p id="datashow"></p>
+      </section>
+    </main>
+    <footer>2022 Detlef Dumpelmann</footer>
+  </body>
+</html>
