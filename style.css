@@ -2,7 +2,13 @@ body {
   margin: 0;
 }
 
-.container {
+header,
+footer,
+#partlist {
+  text-align: center;
+}
+.container,
+#partlist {
   background-color: #333;
   color: white;
   padding: 1rem;

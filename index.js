@@ -21,6 +21,19 @@ containers.forEach((container) => {
       container.insertBefore(draggable, afterElement);
     }
   });
+  container.addEventListener("drop", () => {
+    const collectedItems = [...collector.children].slice(1);
+    const showIt = document.querySelector("#datashow");
+    const showArr = [...showIt.children];
+    showArr.forEach((node) => showIt.removeChild(node));
+    collectedItems.forEach((item, index) => {
+      const pelem = document.createElement("p");
+      pelem.append(
+        document.createTextNode(`Onderdeel ${index + 1} : ${item.title} \n`)
+      );
+      showIt.append(pelem);
+    });
+  });
 });
 
 const getDragAfterElement = (container, y) => {
@@ -40,16 +53,3 @@ const getDragAfterElement = (container, y) => {
     { offset: Number.NEGATIVE_INFINITY }
   ).element;
 };
-collector.addEventListener("drop", () => {
-  const collectedItems = [...collector.children].slice(2);
-  const showIt = document.querySelector("#datashow");
-  const showArr = [...showIt.children];
-  showArr.forEach((node) => showIt.removeChild(node));
-  collectedItems.forEach((item, index) => {
-    const pelem = document.createElement("p");
-    pelem.append(
-      document.createTextNode(`Onderdeel ${index + 1} : ${item.title} \n`)
-    );
-    showIt.append(pelem);
-  });
-});
